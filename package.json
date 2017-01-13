@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "roadhog server",
+    "build": "roadhog build",
+    "lint": "eslint --ext .js src test",
+    "precommit": "npm run lint"
+  },
+  "engines": {
+    "install-node": "6.9.2"
+  },
+  "dependencies": {
+    "antd-mobile": "^0.9.13",
+    "babel-runtime": "^6.20.0",
+    "dva": "^1.2.1",
+    "dva-loading": "^0.2.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "babel-plugin-import": "^1.1.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "expect": "^1.20.2",
+    "husky": "^0.12.0",
+    "postcss-pxtorem": "^3.3.1",
+    "redbox-react": "^1.3.3",
+    "roadhog": "^0.5.1"
+  }
+}
