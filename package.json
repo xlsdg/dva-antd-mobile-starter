@@ -10,7 +10,7 @@
     "install-node": "6.9.2"
   },
   "dependencies": {
-    "antd-mobile": "^0.9.13",
+    "antd-mobile": "^0.9.14",
     "babel-runtime": "^6.20.0",
     "dva": "^1.2.1",
     "dva-loading": "^0.2.0",
@@ -29,8 +29,8 @@
     "eslint-plugin-react": "^6.9.0",
     "expect": "^1.20.2",
     "husky": "^0.12.0",
-    "postcss-pxtorem": "^3.3.1",
+    "postcss-pxtorem": "^4.0.0",
     "redbox-react": "^1.3.3",
-    "roadhog": "^0.5.1"
+    "roadhog": "^0.5.2"
   }
 }
