@@ -1,17 +1,19 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'dva';
 
-import styles from './page01.less';
+import styles from './page03.less';
 
-function Page01({location}) {
+function Page03({
+  location
+}) {
   return (
     <div className={styles.normal}>
-      Route Component: Page01
+      Route Component: Page03
     </div>
   );
 }
 
-Page01.propTypes = {
+Page03.propTypes = {
   location: PropTypes.object.isRequired
 };
 
@@ -19,4 +21,4 @@ function mapStateToProps() {
   return {};
 }
 
-export default connect(mapStateToProps)(Page01);
+export default connect(mapStateToProps)(Page03);

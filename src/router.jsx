@@ -1,14 +1,16 @@
 import React, {PropTypes} from 'react';
 import {Router, Route} from 'dva/router';
 
-import Main from './components/layout/main';
+import Main from './components/layout/main.jsx';
 
-import Index from './routes/index.js';
-import Page01 from './routes/page01.js';
-import Page02 from './routes/page02.js';
-import Page03 from './routes/page03.js';
+import Index from './routes/index.jsx';
+import Page01 from './routes/page01.jsx';
+import Page02 from './routes/page02.jsx';
+import Page03 from './routes/page03.jsx';
 
-function RouterConfig({history}) {
+function RouterConfig({
+  history
+}) {
   return (
     <Router history={history}>
       <Route component={Main}>
