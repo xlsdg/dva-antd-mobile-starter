@@ -3,7 +3,9 @@ import {NavBar, Icon} from 'antd-mobile';
 
 import styles from './header.less';
 
-function Header({location}) {
+function Header({
+  location
+}) {
   return (
     <div className={styles.normal}>
       <NavBar

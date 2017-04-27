@@ -5,7 +5,9 @@ import Footer from './footer.js';
 
 import styles from './main.less';
 
-function Main({children, location}) {
+function Main({
+  children, location
+}) {
   return (
     <div className={styles.normal}>
       <Header location={location} />

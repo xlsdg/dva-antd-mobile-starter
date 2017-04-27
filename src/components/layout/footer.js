@@ -5,7 +5,9 @@ import {routerRedux} from 'dva/router';
 
 import styles from './footer.less';
 
-function Footer({dispatch, childrens, location}) {
+function Footer({
+  dispatch, childrens, location
+}) {
   return (
     <div className={styles.normal}>
       <TabBar
