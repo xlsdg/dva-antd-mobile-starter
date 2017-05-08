@@ -1,0 +1,32 @@
+language: node_js
+
+node_js:
+  - node
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_script:
+  - cd dist
+  - git init
+  - git config --global user.name 'xLsDg'
+  - git config --global user.email 'xlsdg@qq.com'
+  - git add .
+  - git commit -m "Update demo"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+
+env:
+  global:
+    - GH_REF: github.com/xlsdg/dva-antd-mobile-starter.git
+    - secure: "ER3EFEZqQIJw63ghkcZmMyy7agFDVreE27bjSelLs6IuXbKab4DZ/70L61dM+SgaMcKBag8RW6sdXkvWBcGpJ7gyXXSTAdcg+LP+WD3lYI5KeXmlBqat6TpNKz/nWshlbTRFbdplB1Ivk7s6PCm8b0Y+zKkcqvbuaVpWzaZ/tYliVKGCvvpMRXvr2t52FvwEgMijNLUX3fMIskg0mYzTiffbZRSSaanaMSUudRnqhzL0nxqWmuFO1ODzyKARo9zByEiOYP2DkbVW2QsSiNh8lgy5lONae5Wjs9/M+c5sI/Szx4hiNL2+x+C4rNxuqyFXfYKHYQz0OuGhtkQwrHinLw2EDeCOPhTX9YwJ/9SJUHY9TlujuQ/l2XLB9XzUXY1dQJGQC2tt4A7SCJ6bNloiUQSvQRsg1LdcHM5KCXGiGW8HSVorsPbuttOVOfSWNWlaE/Go4v8jpwaSmNgft838biyx/jlQW3Gb5OxfybA8Ecbye1whmjLO/p8v0oWy7T5wiMZMYY9j/tj1gVUCdAir79nzuiKScAJ8Z/d0fLSesLvSHC53AZWwKGEs/vRJDfN2rYjSrRQaa4oGALJkOsexLbRfN9ivoaRaVcXt7gpuOYQ6T8leOlvdzX1JCjFItahHMHvbONzKIsciOpQwVH5GPWGhvrCM0VsMxSTJcjs0Do4="

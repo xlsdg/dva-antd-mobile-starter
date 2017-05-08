@@ -1,4 +1,7 @@
 {
+  "globals" : {
+    "__CDN__": false
+  },
   "parser": "babel-eslint",
   "extends": "airbnb",
   "env": {

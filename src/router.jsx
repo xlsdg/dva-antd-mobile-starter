@@ -1,5 +1,8 @@
-import React, {PropTypes} from 'react';
-import {Router, Route} from 'dva/router';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  Router, Route
+} from 'dva/router';
 
 import Main from './components/layout/main.jsx';
 

@@ -1,7 +1,14 @@
-import React, {PropTypes} from 'react';
-import {TabBar} from 'antd-mobile';
-import {connect} from 'dva';
-import {routerRedux} from 'dva/router';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  TabBar
+} from 'antd-mobile';
+import {
+  connect
+} from 'dva';
+import {
+  routerRedux
+} from 'dva/router';
 
 import styles from './footer.less';
 

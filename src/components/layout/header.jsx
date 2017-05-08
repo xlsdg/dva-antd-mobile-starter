@@ -1,5 +1,8 @@
-import React, {PropTypes} from 'react';
-import {NavBar, Icon} from 'antd-mobile';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  NavBar, Icon
+} from 'antd-mobile';
 
 import styles from './header.less';
 
@@ -12,7 +15,10 @@ function Header({
         leftContent="返回"
         mode="light"
         onLeftClick={() => console.log('onLeftClick')}
-        rightContent={[<Icon key="0" type="search" />, <Icon key="1" type="ellipsis" />]}
+        rightContent={[
+          <Icon key="0" type="search" style={{marginRight: '0.32rem'}} />,
+          <Icon key="1" type="ellipsis" />
+        ]}
       >
         首页
       </NavBar>

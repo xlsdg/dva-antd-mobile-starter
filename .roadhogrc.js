@@ -1,32 +1,42 @@
-import pxtorem from 'postcss-pxtorem';
+// import Path from 'path';
+import PxToRem from 'postcss-pxtorem';
 
 export default {
-  'entry': 'src/index.js',
-  'disableCSSModules': false,
-  'publicPath': '/',
-  'autoprefixer': {
-    'browsers': [
+  entry: 'src/index.js',
+  disableCSSModules: false,
+  publicPath: '/dva-antd-mobile-starter/',
+  autoprefixer: {
+    browsers: [
       'iOS >= 8',
       'Android >= 4'
     ]
   },
-  'proxy': null,
-  'extraPostCSSPlugins': [
-    pxtorem({
+  proxy: null,
+  svgSpriteLoaderDirs: [
+    require.resolve('antd-mobile').replace(/warn\.js$/, '') // antd-mobile 内置svg
+    // path.resolve(__dirname, 'src/my-project-svg-foler') // 业务代码本地私有 svg 存放目录
+  ],
+  extraPostCSSPlugins: [
+    PxToRem({
       rootValue: 100,
       propWhiteList: [],
     }),
   ],
-  'extraBabelPlugins': [
+  extraBabelPlugins: [
     'transform-runtime',
     ['import', {
-      'libraryName': 'antd-mobile',
-      'style': true
+      libraryName: 'antd-mobile',
+      style: true
     }]
   ],
-  'env': {
-    'development': {
-      'extraBabelPlugins': [
+  env: {
+    production: {
+      define: {
+        __CDN__: ''
+      }
+    },
+    development: {
+      extraBabelPlugins: [
         'dva-hmr'
       ]
     }
