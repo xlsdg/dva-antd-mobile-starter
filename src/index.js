@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import dva from 'dva';
 import Loading from 'dva-loading';
 
