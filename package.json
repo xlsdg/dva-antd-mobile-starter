@@ -10,7 +10,7 @@
     "babel-polyfill": "^6.23.0",
     "dva": "^1.2.1",
     "dva-loading": "^0.2.1",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.9",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
