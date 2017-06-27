@@ -1,3 +1,4 @@
+const Webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
@@ -8,6 +9,17 @@ module.exports = function(config, env) {
     config.output.filename = '[name].[chunkhash].js';
     config.output.chunkFilename = '[chunkhash].async.js';
     config.plugins[3] = new ExtractTextPlugin('[contenthash:20].css');    // 注 2
+    for (let plugin, i = 0, l = config.plugins.length; i < l; i++) {
+      plugin = config.plugins[i];
+      if (plugin instanceof Webpack.optimize.CommonsChunkPlugin) {
+        config.plugins[i] = new Webpack.optimize.CommonsChunkPlugin({
+          name: 'common',
+          filename: 'common.[chunkhash].js',
+          minChunks: 2
+        });
+        break;
+      }
+    }
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: 'ejs!src/index.ejs',    // 注 3
