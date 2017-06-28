@@ -5,13 +5,12 @@ const WebpackChunkHash = require('webpack-chunk-hash');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = function(config, env) {
-  config.entry = {
-    index: './src/index.js',
-    common: ['react', 'react-dom']
-  };
-
   config.module.loaders[0].exclude.push(/\.ejs$/);    // 注 1
   if (env === 'production') {
+    config.entry = {
+      index: './src/index.js',
+      common: ['react', 'react-dom']
+    };
     config.output.filename = '[name].[chunkhash].js';
     config.output.chunkFilename = '[chunkhash].async.js';
     config.plugins[3] = new ExtractTextPlugin('[contenthash:20].css');    // 注 2
