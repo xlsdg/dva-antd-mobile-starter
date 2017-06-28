@@ -1,9 +1,15 @@
 const Webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
+const WebpackChunkHash = require('webpack-chunk-hash');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = function(config, env) {
+  config.entry = {
+    index: './src/index.js',
+    common: ['react', 'react-dom']
+  };
+
   config.module.loaders[0].exclude.push(/\.ejs$/);    // 注 1
   if (env === 'production') {
     config.output.filename = '[name].[chunkhash].js';
@@ -20,25 +26,29 @@ module.exports = function(config, env) {
         break;
       }
     }
+    config.plugins.push(new Webpack.IgnorePlugin(/^\.\/locale$/, /moment$/));
+    // config.plugins.push(new BundleAnalyzerPlugin());
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: 'ejs!src/index.ejs',    // 注 3
-        inject: false,
+        inject: true,
         minify: {
           removeComments: true,
           collapseWhitespace: true,
           removeAttributeQuotes: false
         },
-        production: true
+        production: true,
       }),
-      new WebpackMd5Hash()
+      new WebpackChunkHash({
+        algorithm: 'md5'
+      })
     );
   } else {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: 'ejs!src/index.ejs',
-        inject: true
-      }),
+        inject: true,
+      })
     );
   }
   return config;

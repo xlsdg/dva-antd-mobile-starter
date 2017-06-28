@@ -3,8 +3,9 @@ import PxToRem from 'postcss-pxtorem';
 
 export default {
   entry: 'src/index.js',
+  multipage: true,
   disableCSSModules: false,
-  publicPath: '/dva-antd-mobile-starter/',
+  publicPath: '/',
   autoprefixer: {
     browsers: [
       'iOS >= 8',
@@ -31,9 +32,7 @@ export default {
   ],
   env: {
     production: {
-      define: {
-        __CDN__: ''
-      }
+      publicPath: '/dva-antd-mobile-starter/'
     },
     development: {
       extraBabelPlugins: [
