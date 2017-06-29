@@ -51,7 +51,8 @@
     "max-len": [0,80,4,{"ignoreComments":true,"ignoreUrls":true}],
     "func-names": [0],
     "comma-dangle": [2,"never"],
-    "no-underscore-dangle": [0]
+    "no-underscore-dangle": [0],
+    "jsx-a11y/href-no-hash": [0]
   },
   "parserOptions": {
     "ecmaFeatures": {
