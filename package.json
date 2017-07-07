@@ -6,7 +6,7 @@
     "start": "roadhog server"
   },
   "dependencies": {
-    "antd-mobile": "^1.4.0",
+    "antd-mobile": "^1.4.1",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.23.0",
     "dva": "^1.2.1",
@@ -28,8 +28,8 @@
     "babel-runtime": "^6.23.0",
     "ejs-loader": "^0.3.0",
     "eslint": "^4.1.1",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.6.1",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
     "expect": "^1.20.2",
