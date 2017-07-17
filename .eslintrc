@@ -11,8 +11,8 @@
     "generator-star-spacing": [0],
     "consistent-return": [0],
     "react/forbid-prop-types": [0],
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
-    "global-require": [1],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "global-require": [0],
     "import/prefer-default-export": [0],
     "react/jsx-no-bind": [0],
     "react/prop-types": [0],
@@ -52,7 +52,14 @@
     "func-names": [0],
     "comma-dangle": [2,"never"],
     "no-underscore-dangle": [0],
-    "jsx-a11y/href-no-hash": [0]
+    "jsx-a11y/href-no-hash": [0],
+    "import/no-duplicates": [0],
+    "import/no-named-as-default": [0],
+    "import/no-named-as-default-member": [0],
+    "no-plusplus": [0],
+    "no-param-reassign": [0],
+    "no-shadow": [0],
+    "jsx-a11y/label-has-for": [0]
   },
   "parserOptions": {
     "ecmaFeatures": {
