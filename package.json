@@ -6,7 +6,7 @@
     "start": "roadhog server"
   },
   "dependencies": {
-    "antd-mobile": "^1.6.3",
+    "antd-mobile": "^1.6.5",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
     "dva": "^1.2.1",
