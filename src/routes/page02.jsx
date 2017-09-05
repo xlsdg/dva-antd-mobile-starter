@@ -6,13 +6,17 @@ import {
 
 import styles from './page02.less';
 
+import Main from '../components/layout/main.jsx';
+
 function Page02({
   location
 }) {
   return (
-    <div className={styles.normal}>
-      Route Component: Page02
-    </div>
+    <Main location={location}>
+      <div className={styles.normal}>
+        Route Component: Page02
+      </div>
+    </Main>
   );
 }
 

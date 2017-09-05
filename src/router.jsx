@@ -1,27 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Router, Route
+  Router, Switch, Route
 } from 'dva/router';
-
-import Main from './components/layout/main.jsx';
-
-import Index from './routes/index.jsx';
-import Page01 from './routes/page01.jsx';
-import Page02 from './routes/page02.jsx';
-import Page03 from './routes/page03.jsx';
+import Dynamic from 'dva/dynamic';
 
 function RouterConfig({
-  history
+  history, app
 }) {
+  const Index = Dynamic({
+    app,
+    // models: () => [
+    //   import('./models/index')
+    // ],
+    component: () => import('./routes/index')
+  });
+  const Page01 = Dynamic({
+    app,
+    component: () => import('./routes/page01')
+  });
+  const Page02 = Dynamic({
+    app,
+    component: () => import('./routes/page02')
+  });
+  const Page03 = Dynamic({
+    app,
+    component: () => import('./routes/page03')
+  });
+
   return (
     <Router history={history}>
-      <Route component={Main}>
-        <Route path="/" component={Index} />
-        <Route path="/page01" component={Page01} />
-        <Route path="/page02" component={Page02} />
-        <Route path="/page03" component={Page03} />
-      </Route>
+      <Switch>
+        <Route exact path="/" component={Index} />
+        <Route exact path="/page01" component={Page01} />
+        <Route exact path="/page02" component={Page02} />
+        <Route exact path="/page03" component={Page03} />
+      </Switch>
     </Router>
   );
 }

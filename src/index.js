@@ -5,7 +5,11 @@ import Loading from 'dva-loading';
 import './index.less';
 
 // 1. Initialize
-const app = dva();
+const app = dva({
+  onError(err, dispatch) {
+    console.error(err);
+  }
+});
 
 // 2. Plugins
 app.use(Loading({
@@ -14,7 +18,7 @@ app.use(Loading({
 }));
 
 // 3. Model
-// app.model(require('./models/example'));
+// Moved to router.js
 
 // 4. Router
 app.router(require('./router.jsx'));
