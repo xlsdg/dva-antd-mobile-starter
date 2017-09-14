@@ -6,23 +6,23 @@
     "start": "roadhog server"
   },
   "dependencies": {
-    "antd-mobile": "^1.6.5",
+    "antd-mobile": "^1.6.7",
     "axios": "^0.16.2",
     "babel-polyfill": "^6.26.0",
     "dva": "^2.0.1",
-    "dva-loading": "^0.3.0",
+    "dva-loading": "^1.0.0",
     "flex.css": "^1.1.7",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "path-to-regexp": "^2.0.0",
     "prop-types": "^15.5.10",
-    "qs": "^6.5.0",
+    "qs": "^6.5.1",
     "query-string": "^5.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^8.0.0",
     "babel-plugin-dva-hmr": "^0.3.2",
     "babel-plugin-import": "^1.4.0",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -32,7 +32,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.3.0",
-    "expect": "^21.0.0",
+    "expect": "^21.0.2",
     "postcss-pxtorem": "^4.0.1",
     "redbox-react": "^1.5.0",
     "roadhog": "^1.2.2"
