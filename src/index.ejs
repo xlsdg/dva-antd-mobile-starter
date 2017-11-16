@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" data-scale="true">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -16,25 +16,26 @@
 
   <title>Dva Antd Mobile Starter</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- set `maximum-scale` for some compatibility issues -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 
   <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
-  <!-- 高清方案脚本 -->
-  <script src="//os.alipayobjects.com/rmsportal/lvEQQbNgHsIxVfXLkmuX.js"></script>
-</head>
-<body>
-  <div id="root"></div>
-  <!-- FastClick -->
   <script src="//as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
   <script>
     if ('addEventListener' in document) {
-      window.addEventListener('load', function() {
+      document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
       }, false);
     }
+    if(!window.Promise) {
+      document.writeln('<script src="//as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+    }
   </script>
+</head>
+<body>
+  <div id="root"></div>
 </body>
 </html>
