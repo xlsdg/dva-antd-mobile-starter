@@ -1,8 +1,5 @@
 import 'babel-polyfill';
 import dva from 'dva';
-import {
-  message
-} from 'antd';
 
 import './index.less';
 
@@ -10,11 +7,11 @@ import './index.less';
 const app = dva({
   onError(err, dispatch) {
     if (err.resp) {
-      message.error(err.resp.msg);
+      console.error(err.resp.msg);
     } else if (err.srv) {
-      message.error(err.srv.msg);
+      console.error(err.srv.msg);
     } else {
-      message.error(err);
+      console.error(err);
     }
   }
 });
