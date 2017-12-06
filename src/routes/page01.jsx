@@ -6,7 +6,7 @@ import {
 
 import styles from './page01.less';
 
-import Main from '../components/layout/main.jsx';
+import Main from '../layouts/main.jsx';
 
 function Page01({
   location
