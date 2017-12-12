@@ -1,9 +1,6 @@
 import qs from 'qs';
 import _ from 'lodash';
 import Axios from 'axios';
-import {
-  notification
-} from 'antd';
 
 const reqConfig = {
   withCredentials: true
@@ -64,10 +61,10 @@ function checkStatus(resp) {
     return resp;
   }
 
-  notification.error({
-    message: `请求错误 ${resp.status}: ${resp.url}`,
-    description: resp.statusText
-  });
+  // notification.error({
+  //   message: `请求错误 ${resp.status}: ${resp.url}`,
+  //   description: resp.statusText
+  // });
 
   return throwReqError(resp);
 }
